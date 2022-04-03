@@ -1,0 +1,12 @@
+<div style="text-align: center">
+<p>Mostrando el listado de personas</p>
+<ul class="ul-persons">
+  <li *ngFor="let person of persons" [class.selected]="personSelected === person">
+    {{person.showName()}}
+    <br>
+    Edad: {{person.age}}
+    <button (click)="selectPerson(person)">Modificar</button>
+  </li>
+</ul>
+<person-detail [person]="personSelected"></person-detail>
+</div>
