@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {PersonDetailComponent} from './person-detail/person-detail.component';
 import {FormsModule} from "@angular/forms";
 import {PersonListComponent} from './person-list/person-list.component';
+import {PersonService} from "./person.service";
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import {PersonListComponent} from './person-list/person-list.component';
   exports: [
     PersonListComponent
   ],
-  providers: []
+  providers: [PersonService]
 })
 export class PersonsAdministrationModule {
 }

@@ -1,0 +1,11 @@
+<div style="text-align: center">
+  <p>Mostrando el listado de personas</p>
+  <ul class="ul-persons">
+    <li *ngFor="let person of persons" >
+      {{person.showName()}}
+      <br>
+      Edad: {{person.age}}
+      <button (click)="goToDetail(person)">Ver detalle</button>
+    </li>
+  </ul>
+</div>

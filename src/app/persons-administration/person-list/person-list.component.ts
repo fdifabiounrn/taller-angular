@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Person} from "../../domain/person";
+import {PersonService} from "../person.service";
 
 @Component({
   selector: 'person-list',
@@ -8,19 +9,15 @@ import {Person} from "../../domain/person";
 })
 export class PersonListComponent implements OnInit {
 
-  persons: Person[] = [
-    new Person(1, "Federico", "Difabio", 27),
-    new Person(2, "Juan", "Difabio", 14),
-    new Person(3, "Roberto", "Difabio", 21),
-    new Person(4, "Ricardo", "Difabio", 17)
-  ]
+  persons: Person[] = [];
 
   personSelected: Person | null = null;
 
-  constructor() {
+  constructor(private personService: PersonService) {
   }
 
   ngOnInit(): void {
+    this.personService.findAll().subscribe(list => this.persons = list)
   }
 
   selectPerson(person: Person | null) {
