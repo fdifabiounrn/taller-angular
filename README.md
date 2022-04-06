@@ -25,3 +25,16 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+# Docker developer
+
+## 1 - Crear imagen desarrollo
+
+```docker build -t node-angular-latest . -f ./docker/Dockerfile```
+
+## 2 - Run
+
+```docker run --rm -it --name node-angular-latest -v ${PWD}:/app -p 4200:4200 node-angular-latest```
+
+### Dentro del contenedor correr npm install por primera vez

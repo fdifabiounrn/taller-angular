@@ -1,0 +1,5 @@
+FROM node
+WORKDIR /app
+ENV PORT 3000
+EXPOSE 4200
+CMD /bin/bash

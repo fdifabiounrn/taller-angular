@@ -5,6 +5,8 @@ import { PersonRoutingModule } from './person-routing.module';
 import { PersonsListComponent } from './persons-list/persons-list.component';
 import { PersonInfoComponent } from './person-info/person-info.component';
 import {FormsModule} from "@angular/forms";
+import {MatCardModule} from "@angular/material/card";
+import {MaterialModule} from "../material/material/material.module";
 
 
 @NgModule({
@@ -15,7 +17,8 @@ import {FormsModule} from "@angular/forms";
   imports: [
     CommonModule,
     PersonRoutingModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ]
 })
 export class PersonModule { }
